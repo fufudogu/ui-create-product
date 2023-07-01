@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="no-js" lang="">
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#20275b">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ZORT | ยินดีต้อนรับเข้าสู่ระบบ</title>
+    <link rel="shortcut icon" href="/Content/themes/base/images/zorticon.ico" type="image/x-icon">
+    <link rel="icon" href="/Content/themes/base/images/zorticon.ico" type="image/x-icon">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/Content/IntegrationStyle.css" rel="stylesheet">
+
+    <link rel="apple-touch-icon" href="https://secure.zortout.com/Content/pics/logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="https://unpkg.com/@trevoreyre/autocomplete-vue"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.6/dist/vue-quill-editor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/v-calendar@2.2.3/lib/v-calendar.umd.min.js"></script>
+
+    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/bootstrap/css/bootstrap-select.css"
+        media="screen">
+    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/css/bootstrap-datetimepicker.min.css"
+        media="screen">
+    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/style.css">
+    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/style2.css">
+    <link href="https://secure.zortout.com/Content/loading.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit:200,300,400,500|Lato&amp;display=swap&amp;subset=thai"
+        rel="stylesheet">
+    <style type="text/css">
+        .bs-example {
+            font-family: sans-serif;
+            position: relative;
+            margin: 100%;
+        }
+
+        .typeahead {
+            background-color: #FFFFFF;
+            display: inline !important;
+        }
+
+        .tt-query {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        }
+
+        .tt-hint {
+            color: #FFFFFF;
+            display: none;
+        }
+
+        .tt-dropdown-menu {
+            background-color: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 12px;
+            padding: 8px 0;
+            width: 100%;
+        }
+
+        .tt-suggestion {
+            font-size: 24px;
+            line-height: 24px;
+            padding: 3px 20px;
+        }
+
+        .tt-suggestion.tt-is-under-cursor {
+            background-color: #0097CF;
+            color: #FFFFFF;
+        }
+
+        .tt-suggestion p {
+            margin: 0;
+        }
+
+        .twitter-typeahead {
+            display: inline !important;
+        }
+
+
+        .chat-button {
+            padding: 8px 8px 0;
+        }
+
+        .chat-button .button {
+            display: block;
+            font-size: 0.85rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            .chat-button {
+                padding: 14px 8px;
+            }
+
+            .chat-button .button {
+                display: inline;
+            }
+        }
+
+
+        #progressbar-tooltip .progress {
+            position: relative;
+        }
+
+        #progressbar-tooltip .progress-bar-danger+.progress-bar-label {
+            color: #fff;
+        }
+
+        .progress-bar-label {
+            position: absolute;
+            top: 1px;
+            left: 4px;
+            font-size: 10px;
+            color: #666;
+        }
+
+        #progressbar-tooltip:after {
+            position: absolute;
+            top: 15px;
+            right: 0;
+            content: "";
+            width: 1px;
+            height: 20px;
+            background-color: #ced4da;
+        }
+
+        #progressbar-tooltip+.popover {
+            position: absolute !important;
+            width: 350px;
+            font-size: 0.7em !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="zortheader_080617" class="navbar navbar-default navbar-fixed-top topbar ">
+            <div class="container-fluid">
+
+                <div class="navbar-header" id="topbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target=".navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="company pull-left">
+                        <img id="merchant-layout-logo" class="logo merchantimg-5" title="บริษัท ซอร์ทเอาท์ จำกัด"
+                            style=""
+                            src="https://image.zortout.com/ImagesStorage/MerchantImages/5/5d4642a5658f4968bceef826d947e7d9.png">
+                        <p id="merchant-layout-name" class="name">บริษัท ซอร์ทเอาท์ จำกัด</p>
+                    </div>
+                </div>
+
+                <div id="nav-wrapper" class="collapse navbar-collapse side-container">
+                    <ul class="nav navbar-nav side-nav  " id="sidenav">
+                        <li class="zort-brand">
+                            <div class="zort-logo d-inline-block">
+                                <a href="/Dashboard/Initial" class="">
+                                    <img class="zort-img" src="https://secure.zortout.com/Content/pics/zort-logo.png">
+                                    <span class="zort-sitename">ZORT</span>
+                                </a>
+                            </div>
+                            <span id="hamburger" onclick="addSessionMenuStyle();" class="fa-stack"
+                                style="font-size:13px;">
+                                <i class="fal fa-square fa-stack-2x"></i>
+                                <i class="fal fa-bars fa-stack-1x "></i>
+                            </span>
+                        </li>
+                        <li id="tour-reportmenu">
+                            <a href="javascript:updateMenu(&quot;report&quot;);" data-toggle="collapse"
+                                data-target="#report" class="headmenu collapsed " aria-expanded="false"><i
+                                    class="fal fa-chart-bar nav-icon"></i> <span>รายงาน</span> <i id="reportmenu"
+                                    class="fal fa-angle-down arrow-icon"></i></a>
+                            <ul id="report" class="collapse collapse" aria-expanded="false">
+                                <li class="navmini"><span class="navmini__header">รายงาน</span></li>
+                                <li><a href="/Dashboard/Main?zId=hNJyupCPgegLfIubbIfNUcXQsaE4L4eV1MLLylWeo%2bc%3d"
+                                        class="">ภาพรวม</a></li>
+                                <li><a href="/Dashboard/SalesReport?" class="">ยอดขาย</a></li>
+                                <li><a href="/Dashboard/BuyReport?" class="">ยอดซื้อ</a></li>
+                                <li><a href="/Dashboard/ProductReport?" class="">สินค้า</a></li>
+                                <li><a href="/Dashboard/ContactReport?" class="">ลูกค้า</a></li>
+                            </ul>
+                        </li>
+                        <li id="tour-sellmenu">
+                            <a href="javascript:updateMenu(&quot;sell&quot;);" data-toggle="collapse"
+                                data-target="#sell" class="headmenu collapsed " aria-expanded="false"><i
+                                    class="fal fa-clipboard-list-check nav-icon"></i> <span>รายการขาย</span> <i
+                                    id="sellmenu" class="fal fa-angle-down arrow-icon"></i></a>
+                            <ul id="sell" class="collapse collapse" aria-expanded="false">
+                                <li class="navmini"><span class="navmini__header">รายการขาย</span></li>
+                                <li><a href="/Sell/Add?" class="">สร้างรายการขาย</a></li>
+                                <li><a href="/Sell/list?" class="">ดูรายการขาย</a></li>
+                                <li><a href="/Quotation/list?" class="">ใบเสนอราคา</a></li>
+                                <li><a href="/Logistics/list?" class="">บริการส่งสินค้า</a></li>
+                                <li><a href="/Buy/list?&amp;sttype=1" class="">รับคืนสินค้า</a></li>
+                                <li><a href="/Pickandpack/Main?&amp;mc=NQ==&amp;type=2&amp;subtype=0" class=""
+                                        target="_blank">แพ็คสินค้า</a></li>
+                            </ul>
+                        </li>
+                        <li id="tour-buymenu">
+                            <a href="javascript:updateMenu(&quot;buy&quot;);" data-toggle="collapse" data-target="#buy"
+                                class="headmenu collapsed " aria-expanded="false"><i
+                                    class="fal fa-shopping-basket nav-icon"></i> <span>รายการซื้อ</span> <i id="buymenu"
+                                    class="fal fa-angle-down arrow-icon"></i></a>
+                            <ul id="buy" class="collapse collapse" aria-expanded="false">
+                                <li class="navmini"><span class="navmini__header">รายการซื้อ</span></li>
+                                <li><a href="/Buy/Add?" class="">สร้างรายการซื้อ</a></li>
+                                <li><a href="/Buy/list?" class="">ดูรายการซื้อ</a></li>
+                                <li><a href="/Sell/list?&amp;sttype=1" class="">คืนสินค้า</a></li>
+                                <li><a href="/Pickandpack/Main?&amp;mc=NQ==&amp;type=1&amp;subtype=0" class=""
+                                        target="_blank">รับสินค้า</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a id="tour-productmenu" href="javascript:updateMenu(&quot;product&quot;);"
+                                data-toggle="collapse" data-target="#product" class="headmenu collapsed "
+                                aria-expanded="false"><i class="fal fa-box nav-icon"></i> <span>สินค้า</span> <i
+                                    id="productmenu" class="fal fa-angle-down arrow-icon"></i></a>
+                            <ul id="product" class="collapse collapse" aria-expanded="false">
+                                <li class="navmini"><span class="navmini__header">สินค้า</span></li>
+                                <li><a href="/Product/list?" class="">สินค้า</a></li>
+                                <li><a href="/Product/CreateMainProduct?" class="">เพิ่มสินค้า</a></li>
+                                <li><a href="/Bundle/list?" class="">สินค้าเป็นชุด</a></li>
+                                <li><a href="/Product/Variantlist?" class="">สินค้าหลากคุณสมบัติ</a></li>
+                                <li><a href="/Product/Categorylist?" class="">หมวดหมู่</a></li>
+                                <li><a href="/Warehouse/list?" class="">คลังสินค้า/สาขา</a></li>
+                                <li><a href="/Warehouse/Transferlist?" class="">รายการโอนสินค้า</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:updateMenu(&quot;customer&quot;);" data-toggle="collapse"
+                                data-target="#customer" class="headmenu collapsed " aria-expanded="false"><i
+                                    class="fal fa-users nav-icon"></i> <span>ลูกค้า/คู่ค้า</span> <i id="customermenu"
+                                    class="fal fa-angle-down arrow-icon"></i></a>
+                            <ul id="customer" class="collapse collapse" aria-expanded="false">
+                                <li class="navmini"><span class="navmini__header">ลูกค้า/คู่ค้า</span></li>
+                                <li><a href="/Contact/list?" class="">ผู้ติดต่อ</a></li>
+                                <li><a href="/TierPrice/list?" class="">กลุ่มลูกค้า</a></li>
+                                <li><a href="/XRef/list?" class="">กลุ่มคู่ค้า</a></li>
+                                <li><a href="/Contact/Agentlist?" class="">ตัวแทนจำหน่าย</a></li>
+                                <li><a href="/Dropship/list?" class=""><span>หน้าสั่งซื้อ</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:updateMenu(&quot;salepage&quot;);" data-toggle="collapse"
+                                data-target="#salepage" class="headmenu collapsed " aria-expanded="false"><i
+                                    class="fal fa-gift-card nav-icon"></i> <span>ร้านค้าออนไลน์</span> <i
+                                    id="salepagemenu" class="fal fa-angle-down arrow-icon"></i></a>
+                            <ul id="salepage" class="collapse collapse" aria-expanded="false">
+                                <li class="navmini"><span class="navmini__header">เซลเพจ</span></li>
+                                <li><a href="/SalePage/List" class="">เซลเพจ</a></li>
+                                <li><a href="/SalePage/Create" class="">เพิ่มเซลเพจ</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:updateMenu(&quot;finance&quot;);" data-toggle="collapse"
+                                data-target="#finance" class="headmenu collapsed " aria-expanded="false"><i
+                                    class="fal fa-usd-circle nav-icon"></i> <span>การเงิน</span> <i id="financemenu"
+                                    class="fal fa-angle-down arrow-icon"></i></a>
+                            <ul id="finance" class="collapse collapse" aria-expanded="false">
+                                <li class="navmini"><span class="navmini__header">การเงิน</span></li>
+                                <li><a href="/Fin/Report?" class="">ดูภาพรวม</a></li>
+                                <li><a href="/Fin/walletlist?" class="">กระเป๋าเงิน</a></li>
+                                <li><a href="/Fin/list?&amp;financetype=1" class="">รายได้อื่น</a></li>
+                                <li><a href="/Fin/list?&amp;financetype=2" class="">รายจ่ายอื่น</a></li>
+                                <li><a href="/Fin/Transferlist?" class="">รายการโอนเงิน</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:updateMenu(&quot;document&quot;);" data-toggle="collapse"
+                                data-target="#document" class="headmenu collapsed " aria-expanded="false"><i
+                                    class="fal fa-cabinet-filing nav-icon"></i> <span>เอกสาร</span> <i id="documentmenu"
+                                    class="fal fa-angle-down arrow-icon"></i></a>
+                            <ul id="document" class="collapse collapse" aria-expanded="false">
+                                <li class="navmini"><span class="navmini__header">เอกสาร</span></li>
+                                <li><a href="/FileUpload/list?" class="">ไฟล์</a></li>
+                                <li><a href="/ZDocument/list?" class="">เอกสารบัญชี</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:updateMenu(&quot;analytic&quot;);" data-toggle="collapse"
+                                data-target="#analytic" class="headmenu collapsed " aria-expanded="false"><i
+                                    class="fal fa-business-time nav-icon"></i> <span>วางแผนธุรกิจ</span> <i
+                                    id="analyticmenu" class="fal fa-angle-down arrow-icon"></i></a>
+                            <ul id="analytic" class="collapse collapse" aria-expanded="false">
+                                <li class="navmini"><span class="navmini__header">วางแผนธุรกิจ</span></li>
+                                <li><a href="/ReorderPoint?" class="">วางแผนสั่งซื้อซ้ำ</a></li>
+                                <li><a href="/LeadTimeGroup?" class="">กลุ่ม Lead Time</a></li>
+                            </ul>
+                        </li>
+                        <li id="tour-settingmenu">
+                            <a href="javascript:updateMenu(&quot;setting&quot;);" data-toggle="collapse"
+                                data-target="#setting" class="headmenu collapsed " aria-expanded="false"><i
+                                    class="fal fa-cog nav-icon"></i> <span>ตั้งค่า</span> <i id="settingmenu"
+                                    class="fal fa-angle-down arrow-icon"></i></a>
+                            <ul id="setting" class="collapse collapse" aria-expanded="false">
+                                <li class="navmini"><span class="navmini__header">ตั้งค่า</span></li>
+                                <li><a href="/User/Profile?" class="">ข้อมูลส่วนตัว</a></li>
+                                <li><a href="/Setting/Detail?" class="">บริษัท/ร้านค้า</a></li>
+                                <li><a href="/User/list?" class="">ผู้ใช้งาน</a></li>
+                                <li><a href="/Setting/UserRolelist?" class="">สิทธิ์การใช้งาน</a></li>
+                                <li><a href="/Setting/Notification?" class="">การแจ้งเตือน</a></li>
+                                <li><a href="/Integration/Main?" class="">เชื่อมต่อบริการอื่น</a></li>
+                                <li><a href="/Setting/Addon?" class="">ส่วนเสริม</a></li>
+                            </ul>
+                        </li>
+                        <li id="tour-packagemenu">
+                            <a href="/Setting/Package?" data-toggle="collapse" data-target="#package"
+                                class="headmenu collapsed " aria-expanded="false"><i
+                                    class="fal fa-briefcase nav-icon"></i> <span>แพ็คเกจ</span></a>
+                            <ul class="collapse">
+                                <li class="navmini"><span class="navmini__header">แพ็คเกจ</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right top-nav" id="topnav">
+                        <li class="pr-2 mr-2" style="position:relative;display:none;" id="transactionquotaarea">
+                            <div id="progressbar-tooltip" class="mt-1 pl-2 pr-2" ata-toggle="popover"
+                                data-trigger="hover" data-placement="bottom"
+                                data-content="แสดงจำนวนการใช้งานรายการต่อเดือนในแพ็คเกจของคุณ" data-original-title=""
+                                title="">
+                                <span class="grey-400" style="font-size: 10px;">จำนวนรายการเดือนนี้</span>
+                                <div class="progress m-0" style="width: 100%;height:14px;margin-top:-2px!important;">
+                                    <div id="transactionquotapercent" class="progress-bar progress-bar-success"></div>
+                                    <span id="transactionquotanumber" class="progress-bar-label"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="chat-button">
+                                <a class="button button-secondary button-sm rounded m-0 fs-base pr-3 pl-3"
+                                    href="javascript:GoToZortSocial();">
+                                    <i class="fal fa-comments-alt mr-2"></i> โซเชี่ยลคอมเมิร์ซ
+                                </a>
+                            </div>
+                        </li>
+                        <li style="">
+                            <div class="chat-button">
+                                <a class="button button-secondary button-sm rounded m-0 fs-base pr-3 pl-3"
+                                    href="/ZPoint/History">
+                                    <svg class="topbar-icon topbar-icon-zortpoint" version="1.1" id="Small_Size"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        x="0px" y="0px" viewBox="0 0 800 800" style="display:inline-block"
+                                        xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path class="st0"
+                                                    d="M536.8,277.7l-34.1-58.9h-204l-34,58.8l67,117l-67.3,116.9l-0.2,0.3l33.6,58.9l0.2,0.3h203.2l34.4-57.7
+                                                                l-67.6-118L536.8,277.7z M467.2,394.1l-32.7-57l33.5-57.5l32.5,57.4L467.2,394.1z M466.5,395.4l-32.8,56.5l-32.8-57.2l32.8-56.3
+                                                                L466.5,395.4L466.5,395.4z M399.3,278.6l-32.9,56.5L334,278.5L399.3,278.6z M398.6,511.5l-65.4-0.1l32.9-56.5L398.6,511.5z
+                                                                    M535.2,277.7l-33.8,57.9l-32.5-57.4l33.4-57.3L535.2,277.7z M266.6,278.3l65.8,0.2l32.9,57.6h-65.6L266.6,278.3z M300.5,337.4
+                                                                H365l-32.5,55.9L300.5,337.4z M332.5,396l32.5,56.7h-65.1L332.5,396z M299.1,454h66l-33.4,57.3l-65.5-0.1L299.1,454z M534.1,513.4
+                                                                l-33.2,55.7l-32.5-56.6l32.8-56.4L534.1,513.4z M500.4,454.7l-32.8,56.4l-33.2-57.9l32.8-56.5L500.4,454.7z">
+                                                </path>
+                                                <path class="st0" d="M400.5,37.4C600.4,37.4,763,200.1,763,399.9S600.4,762.4,400.5,762.4S38,599.8,38,399.9
+                                                                S200.6,37.4,400.5,37.4 M400.5-0.1c-220.9,0-400,179.1-400,400s179.1,400,400,400s400-179.1,400-400S621.4-0.1,400.5-0.1
+                                                                L400.5-0.1z"></path>
+                                                <path class="st0"
+                                                    d="M265.2,175.7c100.7-60.7,233.7-47.8,320.5,39s99.8,219.8,39,320.5l15.2,15.2
+                                                                c68.8-109.3,55.7-255.4-39.4-350.5S359.2,91.7,250,160.5L265.2,175.7z">
+                                                </path>
+                                            </g>
+                                            <path class="st0"
+                                                d="M535.8,624.1c-100.7,60.7-233.7,47.8-320.5-39s-99.8-219.8-39-320.5l-15.2-15.2
+                                                          c-68.8,109.3-55.7,255.4,39.4,350.5S441.8,708.2,551,639.4L535.8,624.1z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                    <span id="merchantlogisticpoint" title="Logistic Point"
+                                        class="font-lato fs-sm">423</span>
+                                    <span id="" class="font-lato fs-sm"> | </span>
+                                    <span id="merchantzortpoint" title="ZORT Point" class="font-lato fs-sm">14</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li id="notificationrequestdropshiparea" class="notification-item">
+                        </li>
+                        <li id="notificationpaymentarea" class="notification-item">
+                        </li>
+                        <li id="notificationrepeatedcustomerarea" class="notification-item">
+                        </li>
+                        <li id="notificationarea" class="notification-item">
+                            <script>
+                                sessionStorage.setItem('mainNotification', JSON.stringify(null));
+                            </script>
+                            <a class="dropdown-toggle notification-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false" onclick="doGetNotificationList();">
+                                <i class="fa fa-bell topbar-icon" data-gtm-vis-recent-on-screen-12467854_247="3733"
+                                    data-gtm-vis-first-on-screen-12467854_247="3733"
+                                    data-gtm-vis-total-visible-time-12467854_247="100"
+                                    data-gtm-vis-has-fired-12467854_247="1"></i>
+                                <span class="notification-number"></span>
+                                <span class="notification-text">แจ้งเตือน</span>
+                            </a>
+                            <div class="dropdown-menu sub-nav -top keep-open subnav-popup">
+                                <div class="-header hidden-xs mb-2">
+                                    แจ้งเตือน
+                                </div>
+                                <div class="">
+                                </div>
+                            </div>
+                        </li>
+                        <li id="notificationhelparea" class="notification-item"></li>
+                        <li class="dropdown notification-item" id="profiledropdown">
+                            <a class="dropdown-toggle notification-profile notification-toggle" data-toggle="dropdown"
+                                role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user-circle" title="IKPOP MYSHOP"></i>
+                                IKPOP MYSHOP
+                            </a>
+                            <ul class="dropdown-menu sub-nav -top">
+                                <li><a href="/User/Profile?">ข้อมูลส่วนตัว</a></li>
+                                <li><a href="/User/ChangePassword?">เปลี่ยนรหัสผ่าน</a></li>
+                                <li><a href="/Setting/Invitation?">ชวนเพื่อนใช้งาน</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Support code</li>
+                                <li class="keep-open"><a href="#" onclick="event.preventDefault();" class="cbbtn"
+                                        data-clipboard-text="000005" title="Copy Link">000005</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/Home/LogOff" onclick="clearAllSessions()">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section id="main1" style="" class="">
+            <div class="content">
+                <div class="d-lg-flex flex-row justify-content-between mb-4">
+                    <div class="mb-4 mb-lg-0">
+                        <span class="font-kanit fs-sm"><a href="/Product/list?&amp;page=1"><i
+                                    class="fal fa-chevron-left fs-xs mr-1"></i> กลับไปยังหน้าสินค้า</a></span>
+                        <h1 class="title-page">แก้ไข - PRODUCT TEST 3</h1>
+                    </div>
+                </div>
+                <div class="tabsbar mb-5 bd-bottom-grey-100">
+                    <ul class="nav nav-tabs" id="editproductsetting">
+                        <li class="" onclick="editProduct();"><a data-toggle="tab" href="#edit_product_zort">ข้อมูล
+                                ZORT</a></li>
+                        <li class="active" onclick="editMarketplaceProduct();"><a data-toggle="tab"
+                                href="#edit_product_marketplace">ข้อมูล Marketplace</a></li>
+                    </ul>
+                </div>
+                <div class="shadow bg-white p-4 pb-6 pt-6 text-center">
+                    <div>
+                        <h2 class="font-kanit fs-lg">เชื่อมต่อ Marketplace ที่คุณต้องการ</h2>
+                        <p class="grey-400 fs-base font-kanit">รวมข้อมูลจากทุกช่องทางการขาย
+                            ให้คุณจัดการได้ในที่เดียว<br />
+                            ไม่ว่าคุณจะขายของออนไลน์ผ่านช่องทางไหน</p>
+                        <p class="red-500">(Note: กรณียังไม่เชื่อมต่อกับระบบใดๆ เลย)</p>
+                        <img src="market.png" class="wp-100 mt-5 mb-5" style="max-width: 500px;" />
+                        <a href="#" class="d-block button button-primary rounded wf-200 m-auto">เชื่อมต่อบริการอื่น</a>
+                    </div>
+
+                    <hr />
+                    <div>
+                        <h2 class="font-kanit fs-lg">เชื่อมต่อ Marketplace ที่คุณต้องการ</h2>
+                        <p class="grey-400 fs-base font-kanit">รวมข้อมูลจากทุกช่องทางการขาย
+                            ให้คุณจัดการได้ในที่เดียว<br />
+                            ไม่ว่าคุณจะขายของออนไลน์ผ่านช่องทางไหน</p>
+                        <p class="red-500">(Note: กรณีเชื่อมต่อระบบมาแล้ว จะขึ้นให้เลือกว่าจะเลือกอันไหน)</p>
+                        <img src="market.png" class="wp-100 mt-5 mb-5" style="max-width: 300px;" />
+                        <div class="row" style="max-width: 700px; margin: 0 auto 15px;">
+                            <div class="col-sm-4">
+                                <div class="d-flex text-left">
+                                    <div class="mr-2">
+                                        <input type="checkbox" id="" class="form-checkbox" checked="">
+                                    </div>
+                                    <div>
+                                        <label for="" class="">Shopee สาขารังสิต</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="d-flex text-left">
+                                    <div class="mr-2">
+                                        <input type="checkbox" id="" class="form-checkbox" checked="">
+                                    </div>
+                                    <div>
+                                        <label for="" class="">Shopee คลังสำรอง</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="d-flex text-left">
+                                    <div class="mr-2">
+                                        <input type="checkbox" id="" class="form-checkbox">
+                                    </div>
+                                    <div>
+                                        <label for="" class="">Lazada ร้านแรกดั้งเดิม</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="d-flex text-left">
+                                    <div class="mr-2">
+                                        <input type="checkbox" id="" class="form-checkbox">
+                                    </div>
+                                    <div>
+                                        <label for="" class="">Lazada ร้านแรกดั้งเดิม</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="d-flex text-left">
+                                    <div class="mr-2">
+                                        <input type="checkbox" id="" class="form-checkbox">
+                                    </div>
+                                    <div>
+                                        <label for="" class="">Lazada ขายกำไรทดลองเล่นๆ</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="d-flex text-left">
+                                    <div class="mr-2">
+                                        <input type="checkbox" id="" class="form-checkbox">
+                                    </div>
+                                    <div>
+                                        <label for="" class="">Tiktok มาแรงแซงทางโค้ง</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <a href="s-upload.html" class="d-block button button-primary rounded wf-200 m-auto">ต่อไป</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
