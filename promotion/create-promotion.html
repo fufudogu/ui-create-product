@@ -449,22 +449,22 @@
                     <fieldset id="tour-sale-info" class="mb-5 mb-lg-0" style="max-width: 600px;">
                         <div class="form-group">
                             <div class="row">
-                                <label for="refname" class="col-sm-4 pt-md-2 text-right">ชื่อโปรโมชั่น</label>
+                                <label for="ืname" class="col-sm-4 pt-md-2 text-right">ชื่อโปรโมชั่น</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control form-text" id="" maxlength="128"
+                                    <input type="text" class="form-control form-text" id="ืname" maxlength="256"
                                         value="">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <label for="transactiondate" class="col-sm-4 pt-md-2 text-right">วันที่เริ่มต้น <span
+                                <label for="promotion-date-start" class="col-sm-4 pt-md-2 text-right">วันที่เริ่มต้น <span
                                         class="required-field">*</span></label>
                                 <div class="col-sm-8">
                                     <div class="input-group date form_date" data-date="" data-date-format="d/m/yyyy"
                                         data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                                        <input class="form-control" type="text" name="transactiondate" value="3/7/2566"
-                                            id="transactiondate" readonly="">
+                                        <input class="form-control" type="text" name="promotion-date-start" value="3/7/2566"
+                                            id="promotion-date-start" readonly="">
                                         <span class="input-group-addon"><span
                                                 class="glyphicon glyphicon-remove"></span></span>
                                         <span class="input-group-addon"><span
@@ -475,13 +475,13 @@
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <label for="transactiondate" class="col-sm-4 pt-md-2 text-right">วันสิ้นสุด <span
+                                <label for="promotion-date-end" class="col-sm-4 pt-md-2 text-right">วันสิ้นสุด <span
                                         class="required-field">*</span></label>
                                 <div class="col-sm-8">
                                     <div class="input-group date form_date" data-date="" data-date-format="d/m/yyyy"
                                         data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                                        <input class="form-control" type="text" name="transactiondate" value="3/7/2566"
-                                            id="transactiondate" readonly="">
+                                        <input class="form-control" type="text" name="promotion-date-end" value="3/7/2566"
+                                            id="promotion-date-end" readonly="">
                                         <span class="input-group-addon"><span
                                                 class="glyphicon glyphicon-remove"></span></span>
                                         <span class="input-group-addon"><span
@@ -490,10 +490,10 @@
                                     <div class="d-flex mt-2">
                                         <div class="mr-3">
                                             <input type="checkbox" name="isshippingprofitcalculate"
-                                                id="isshippingprofitcalculate" class="form-checkbox" checked="">
+                                                id="date-unlimited" class="form-checkbox" checked="">
                                         </div>
                                         <div>
-                                            <label for="isshippingprofitcalculate">ไม่มีที่สิ้นสุด</label>
+                                            <label for="date-unlimited">ไม่มีที่สิ้นสุด</label>
                                         </div>
                                     </div>
                                 </div>
@@ -502,11 +502,11 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <label for="refname" class="col-sm-4 pt-md-2 text-right">ประเภทโปรโมชั่น</label>
+                                <label for="type" class="col-sm-4 pt-md-2 text-right">ประเภทโปรโมชั่น</label>
                                 <div class="col-sm-8">
-                                    <div class="d-md-flex mb-5" style="gap: 10px;">
+                                    <div class="d-md-flex" style="gap: 10px;">
                                         <div id="" class="d-flex" style="flex: 1 1 0;">
-                                            <input type="radio" name="paymentchannel" id="1"
+                                            <input type="radio" name="promotion-type" id="1"
                                                 class="payment-choice sr-only">
                                             <label for="1"
                                                 class="wp-100 d-flex flex-row justify-content-between align-items-center lh-1 p-3 rounded-sm payment-select">
@@ -517,7 +517,7 @@
                                             </label>
                                         </div>
                                         <div id="" class="d-flex" style="flex: 1 1 0;">
-                                            <input type="radio" name="paymentchannel" id="2"
+                                            <input type="radio" name="promotion-type" id="2"
                                                 class="payment-choice sr-only">
                                             <label for="2"
                                                 class="wp-100 d-flex flex-row justify-content-between align-items-center lh-1 p-3 rounded-sm payment-select">
@@ -534,29 +534,29 @@
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <label for="" class="col-sm-4 pt-md-2 text-right">ช่วงเวลา</label>
+                                <label for="promotion-time-start" class="col-sm-4 pt-md-2 text-right">ช่วงเวลา</label>
                                 <div class="col-sm-8">
                                     <div class="d-flex" style="gap: 10px;align-items: center;">
-                                        <select class="form-control form-text form-select" id="">
+                                        <select class="form-control form-text form-select wf-150" id="promotion-time-start">
                                             <option value="" selected="">1.00</option>
                                             <option value="">2.00</option>
                                             <option value="">3.00</option>
                                         </select>
                                         -
-                                        <select class="form-control form-text form-select" id="">
+                                        <select class="form-control form-text form-select wf-150" id="promotion-time-end">
                                             <option value="" selected="">1.00</option>
                                             <option value="">2.00</option>
                                             <option value="">3.00</option>
                                         </select>
-                                        <button type="button" class="wf-200 fs-sm">+ ช่วงเวลา</button>
+                                        <button type="button" class="wf-200 fs-sm button button-secondary button-sm"><i class="far fa-alarm-clock"></i> เพิ่มช่วงเวลา</button>
                                     </div>
                                     <div class="d-flex mt-2">
                                         <div class="mr-3">
-                                            <input type="checkbox" name="isshippingprofitcalculate"
-                                                id="isshippingprofitcalculate" class="form-checkbox" checked="">
+                                            <input type="checkbox" name="promotion-time-unlimited"
+                                                id="promotion-time-unlimited" class="form-checkbox" checked="">
                                         </div>
                                         <div>
-                                            <label for="isshippingprofitcalculate">ไม่กำหนด</label>
+                                            <label for="promotion-time-unlimited">ไม่กำหนด</label>
                                         </div>
                                     </div>
                                 </div>
@@ -565,24 +565,33 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <label for="refname" class="col-sm-4 pt-md-2 text-right">ลำดับออเดอร์</label>
+                                <label for="promotion-order-start" class="col-sm-4 pt-md-2 text-right">ลำดับออเดอร์</label>
                                 <div class="col-sm-8">
                                     <div class="d-flex" style="gap: 10px;align-items: center;">
-                                        <input type="text" class="form-control form-text" id="" maxlength="32" placeholder="0"
+                                        <input type="text" class="form-control form-text wf-100" id="promotion-order-start" maxlength="1000" placeholder="0"
                                             value="">
                                         -
-                                        <input type="text" class="form-control form-text" id="" maxlength="1000" placeholder="100"
+                                        <input type="text" class="form-control form-text wf-100" id="promotion-order-end" maxlength="1000" placeholder="100"
                                             value="">
                                     </div>
                                     <div class="d-flex mt-2">
                                         <div class="mr-3">
-                                            <input type="checkbox" name="isshippingprofitcalculate"
-                                                id="isshippingprofitcalculate" class="form-checkbox" checked="">
+                                            <input type="checkbox" name="promotion-order-unlimited"
+                                                id="promotion-order-unlimited" class="form-checkbox" checked="">
                                         </div>
                                         <div>
-                                            <label for="isshippingprofitcalculate">ไม่กำหนด</label>
+                                            <label for="promotion-order-unlimited">ไม่กำหนด</label>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label for="bill" class="col-sm-4 pt-md-2 text-right">ยอดบิลขั้นต่ำ </label>
+                                <div class="col-sm-8 d-flex" style="gap: 10px;align-items: center;">
+                                    <input type="text" class="form-control form-text wf-100" id="bill" maxlength="128"
+                                        value=""> บาท
                                 </div>
                             </div>
                         </div>
@@ -611,7 +620,7 @@
                                                         <div class="form-text--transparent font-lato">1</div>
                                                     </td>
                                                     <td>
-                                                        <input type="text" class="form-control form-text" id="" value="" placeholder="พิมพ์สินค้า">
+                                                        <input type="text" class="form-control form-text" id="" value="" placeholder="พิมพ์ชื่อสินค้า">
                                                     </td>
                                                     <td>
                                                         <input type="text"
@@ -661,7 +670,7 @@
                                                         <div class="form-text--transparent font-lato">1</div>
                                                     </td>
                                                     <td>
-                                                        <input type="text" class="form-control form-text" id="" value="" placeholder="พิมพ์สินค้า">
+                                                        <input type="text" class="form-control form-text" id="" value="" placeholder="พิมพ์ชื่อสินค้า">
                                                     </td>
                                                     <td>
                                                         <input type="text"

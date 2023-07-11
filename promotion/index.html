@@ -439,11 +439,175 @@
             <div class="content">
                 <div class="d-lg-flex flex-row justify-content-between mb-4">
                     <div class="mb-4 mb-lg-0">
-                        <h1 class="title-page">Table</h1>
+                        <span class="font-kanit fs-sm">
+                        </span>
+                        <h1 class="title-page">
+                            โปรโมชั่น
+                        </h1>
+                        <span class="font-kanit" id="tabledesc"><span>จำนวน <span class="font-lato">16,620</span>
+                                รายการ</span></span>
+                    </div>
+                    <div class="" id="addProductBtn">
+                        <button type="button" class="button button-primary button-round">สร้างโปรโมชั่น</button>
                     </div>
                 </div>
-                <div class="shadow bg-white p-4 pb-6 pt-6 text-center">
-                    ตาราง
+                <div class="search-box mb-4">
+                    <div class="form-text-icon d-inline-block mr-3">
+                        <i class="fal fa-search"></i>
+                        <label class="sr-only" for="search">ค้นหา</label>
+                        <input type="text" class="form-control form-text rounded" id="quicksearchtext"
+                            placeholder="ค้นหา" maxlength="128" onkeypress="searchKeyPress(event);">
+                    </div>
+                </div>
+                <div class="z-filter mb-4" id="checkboxrecordarea0">
+                    <div class="btn-group">
+                        <button type="button" class="button button-default button-md dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            id="checkboxrecordarea1"><small><span
+                                    id="checkboxrecordareacount">(1)</span></small></button>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="button button-default button-md dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>คำสั่ง</span><i
+                                class="far fa-angle-down"></i></button>
+                        <span class="sr-only">Toggle Dropdown</span>
+                        <ul class="dropdown-menu sub-nav">
+                            <li><a href="javascript:doMultiDeleteTransfer();">ลบรายการ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tabsbar">
+                    <ul class="nav nav-tabs">
+                        <li id="allproduct" class="active"><a href="#">ทั้งหมด</a></li>
+                        <li id="activeproduct" class=""><a href="#">โปรโมชั่นที่ผ่านมา</a></li>
+                    </ul>
+                </div>
+                <div class="table-view">
+                    <div class="t-responsive">
+                        <table class="table zort-table zort-table--wtransfer">
+                            <thead>
+                                <tr>
+                                    <th class="index">#</th>
+                                    <th class="chk">
+                                        <input type="checkbox" id="allcheck" value="" aria-label="..."
+                                            class="check-all-item" onchange="">
+                                    </th>
+                                    <th class="date"><a href="#">วันที่</a>
+                                    </th>
+                                    <th class="name" style="min-width: 35%;width: 35%;max-width: 35%;"><a
+                                            href="#">รายการ</a>
+                                    </th>
+                                    <th class="type">ประเภท</th>
+                                    <th class="from">วันเริ่มต้น/วันสิ้นสุด</th>
+                                    <th class="status text-center"><a href="#">สถิติการใช้งาน</a>
+                                    </th>
+                                    <th class="action"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="index">
+                                        <span id="" class="truncate" title="">1</span>
+                                    </td>
+                                    <td class="chk">
+                                        <div class="">
+                                            <label>
+                                                <input type="checkbox" class="checkboxrow" onchange="" value="">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="date">
+                                        1 มิ.ย. 2566
+                                    </td>
+                                    <td class="name">
+                                        ซื้อแก้วน้ำ แถม พัดลม
+                                    </td>
+                                    <td class="type">
+                                        สินค้า
+                                    </td>
+                                    <td class="from">
+                                        1 มิ.ย. 2566 - 30 มิ.ย. 2566
+                                    </td>
+                                    <td class="status text-center">
+                                        <span class="z-badge z-badge--sm z-badge--success">17</span>
+                                    </td>
+                                    <td class="action">
+                                        <div class="btn-etc dropdown">
+                                            <i class="far fa-ellipsis-v" id="" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="true"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="index">
+                                        <span id="" class="truncate" title="">1</span>
+                                    </td>
+                                    <td class="chk">
+                                        <div class="">
+                                            <label>
+                                                <input type="checkbox" class="checkboxrow" onchange="" value="">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="date">
+                                        1 มิ.ย. 2566
+                                    </td>
+                                    <td class="name">
+                                        ซื้อผ้าห่ม แถม หมอน สำหรับ ออเดอร์ 10 แรกเท่านั้น
+                                    </td>
+                                    <td class="type">
+                                        สินค้า
+                                    </td>
+                                    <td class="from">
+                                        1 มิ.ย. 2566 - 30 มิ.ย. 2566
+                                    </td>
+                                    <td class="status text-center">
+                                        <span class="z-badge z-badge--sm z-badge--success">17</span>
+                                    </td>
+                                    <td class="action">
+                                        <div class="btn-etc dropdown">
+                                            <i class="far fa-ellipsis-v" id="" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="true"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="index">
+                                        <span id="" class="truncate" title="">1</span>
+                                    </td>
+                                    <td class="chk">
+                                        <div class="">
+                                            <label>
+                                                <input type="checkbox" class="checkboxrow" onchange="" value="">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="date">
+                                        1 มิ.ย. 2566
+                                    </td>
+                                    <td class="name">
+                                        ซื้อดินสอ แถมปากกา ช่วงเวลา 10.00-11.00
+                                    </td>
+                                    <td class="type">
+                                        สินค้า
+                                    </td>
+                                    <td class="from">
+                                        1 มิ.ย. 2566 - 30 มิ.ย. 2566
+                                    </td>
+                                    <td class="status text-center">
+                                        <span class="z-badge z-badge--sm z-badge--success">17</span>
+                                    </td>
+                                    <td class="action">
+                                        <div class="btn-etc dropdown">
+                                            <i class="far fa-ellipsis-v" id="" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="true"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
