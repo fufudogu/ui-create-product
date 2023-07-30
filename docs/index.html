@@ -1,47 +1,1093 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head lang="">
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: Sarabun;
+        font-size: 12px;
+      }
+      page[size="A4"] {
+        display: block;
+        width: 21cm;
+        /* height: 29.7cm; */
+      }
+      @media print {
+        .page-number:before{
+          counter-increment: page;
+          content: counter(page);
+        }
+      }
+    </style>
+  </head>
 
-<head class="no-js" lang="">
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#20275b">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>ZORT | ยินดีต้อนรับเข้าสู่ระบบ</title>
-    <link rel="shortcut icon" href="/Content/themes/base/images/zorticon.ico" type="image/x-icon">
-    <link rel="icon" href="/Content/themes/base/images/zorticon.ico" type="image/x-icon">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="/Content/IntegrationStyle.css" rel="stylesheet">
-
-    <link rel="apple-touch-icon" href="https://secure.zortout.com/Content/pics/logo.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
-    <script src="https://unpkg.com/@trevoreyre/autocomplete-vue"></script>
-    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.6/dist/vue-quill-editor.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/v-calendar@2.2.3/lib/v-calendar.umd.min.js"></script>
-
-    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/bootstrap/css/bootstrap-select.css"
-        media="screen">
-    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/css/bootstrap-datetimepicker.min.css"
-        media="screen">
-    <!-- <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/style.css"> -->
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="https://secure.zortout.com/Content/cssTemp/style2.css">
-    <link href="https://secure.zortout.com/Content/loading.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Kanit:200,300,400,500|Lato&amp;display=swap&amp;subset=thai"
-        rel="stylesheet">
+  <body class="bg-gray-100 print:bg-transparent">
     
-</head>
-
-<body>
-    
-</body>
-
+    <page size="A4" class="mx-auto bg-white p-5 mt-6 print:p-0 print:mt-0">
+      <table>
+        <thead>
+          <tr>
+            <th class="text-left font-normal">
+              <div class="space-y-2 mb-2">
+                <!-- HEADER -->
+                <div class="flex justify-between items-center">
+                  <div class="flex items-end space-x-4">
+                    <h1 class="text-2xl">ใบวางบิล Billing Note</h1>
+                    <p>(ต้นฉบับ / original) (<span class="text-xs">หน้า <span class="page-number"></span>/pages</span>)</p>
+                  </div>
+                  <div>
+                    <img src="https://placehold.co/150x60" alt="log" />
+                  </div>
+                </div>
+                <!-- CUSTOMER INFO -->
+                <div class="flex space-x-6">
+                  <!-- LEFT -->
+                  <div class="flex-1 leading-5">
+                    <div class="flex space-x-4">
+                      <div class="w-32 flex-none">
+                        <span class="font-bold">ลูกค้า</span> / Custormer
+                      </div>
+                      <div class="grow">TestAPI Contacts 02 Limited Partnership</div>
+                    </div>
+                    <div class="flex space-x-4">
+                      <div class="w-32 flex-none">
+                        <span class="font-bold">ที่อยู่</span> / Address
+                      </div>
+                      <div class="grow">
+                        145/161 Soi Khu Bon 27/7, Khu Bon Ridl. Bangkhen Tarang
+                        Bangkok 10220
+                      </div>
+                    </div>
+                    <div class="flex space-x-4">
+                      <div class="w-32 flex-none">
+                        <span class="font-bold">เลขผู้เสียภาษี</span> / Tax ID
+                      </div>
+                      <div class="grow flex space-x-4">
+                        <div class="flex-1">1234567890</div>
+                        <div class="flex flex-1">
+                          <span class="font-bold">E:</span> peak@peakengine.com
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex space-x-4">
+                      <div class="w-32 flex-none">
+                        <span class="font-bold">ผู้ติดต่อ</span> / Attention
+                      </div>
+                      <div class="grow flex space-x-4">
+                        <div class="flex-1">Peak Engine</div>
+                        <div class="flex flex-1">
+                          <span class="font-bold">T:</span> 0955559999
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- RIGHT -->
+                  <div class="w-64 flex-none leading-5">
+                    <div class="flex space-x-4">
+                      <div class="w-20 flex-none">
+                        <span class="font-bold">เลขที</span> / NO.
+                      </div>
+                      <div>BN-20190100002</div>
+                    </div>
+                    <div class="flex space-x-4">
+                      <div class="w-20 flex-none">
+                        <span class="font-bold">วันที</span> / Issue
+                      </div>
+                      <div>04/01/2019</div>
+                    </div>
+                    <div class="flex space-x-4">
+                      <div class="w-20 flex-none">
+                        <span class="font-bold">อ้างอิง</span> / Ref
+                      </div>
+                      <div>-</div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="border-black my-0 py-0" />
+                <!-- CUSTOMER INFO -->
+                <div class="flex space-x-6 leading-5">
+                  <!-- LEFT -->
+                  <div class="flex-1">
+                    <div class="flex space-x-4">
+                      <div class="w-20 flex-none">
+                        <span class="font-bold">ผู้ออก</span> / issuer
+                      </div>
+                      <div>
+                        ATest Production Company Limited (Head Office) อาคาร
+                        ไทยทาวเวอร์ ห้องที่ 145/161 ซอย27/7 ถนนตู้บอน แขวงท่า แรง
+                        เขตบางเขน กรุงเทพมหานคร 10220
+                      </div>
+                    </div>
+                  </div>
+                  <!-- RIGHT -->
+                  <div class="flex-1">
+                    <div class="flex space-x-4">
+                      <div class="w-36 flex-none">
+                        <span class="font-bold">เลขผู้เสียภาษี</span> / Tax ID
+                      </div>
+                      <div class="grow">0105557123422</div>
+                    </div>
+                    <div class="flex space-x-4">
+                      <div class="w-36 flex-none">
+                        <span class="font-bold">จัดเตรียมโดย</span> / Prepared by
+                      </div>
+                      <div>Panupong Palawong</div>
+                    </div>
+                    <div class="flex space-x-4">
+                      <div class="w-36 flex-none">
+                        <span class="font-bold">T:</span> 25
+                      </div>
+                      <div>
+                        <span class="font-bold">E:</span> boonchai@peakengine.com
+                      </div>
+                    </div>
+                    <div class="flex space-x-4">
+                      <div class="w-36 flex-none">
+                        <span class="font-bold">W:</span> https://peakengine.com
+                      </div>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div>
+                <table class="w-full t-4 border-t border-b border-black divide-y divide-black">
+                  <thead class="">
+                    <tr class="divide-x divide-black">
+                      <th class="font-normal w-2/12">
+                        <span class="block font-bold">ล่าดันที</span>
+                        <span class="block">No.</span>
+                      </th>
+                      <th class="font-normal w-2/12">
+                        <span class="block font-bold">เลขที่เอกสาร</span>
+                        <span class="block">ID no.</span>
+                      </th>
+                      <th class="font-normal w-2/12">
+                        <span class="block font-bold">วันที่เอกสาร</span>
+                        <span class="block">Issue Date</span>
+                      </th>
+                      <th class="font-normal w-2/12">
+                        <span class="block font-bold">วันที่ครบกําหนด</span>
+                        <span class="block">Due Date</span>
+                      </th>
+                      <th class="font-normal w-2/12">
+                        <span class="block font-bold">จํานวนเงินรวม</span>
+                        <span class="block">Full Amount</span>
+                      </th>
+                      <th class="font-normal w-2/12">
+                        <span class="block font-bold">จํานวนเงินวางบิล</span>
+                        <span class="block">Billing Amount</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="align-top">
+                    <!-- ITEM ROW -->
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    <tr class="divide-x divide-black">
+                      <td class="px-2 py-1 text-center">1</td>
+                      <td class="px-2 py-1">IV-20180500014</td>
+                      <td class="px-2 py-1 text-center">17/05/2018</td>
+                      <td class="px-2 py-1 text-center">124/05/2018</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                      <td class="px-2 py-1 text-right">107,000.00</td>
+                    </tr>
+                    
+      
+      
+                    <!-- EMPTY ROW FOR HEIGHT -->
+                    <!-- <tr class="divide-x divide-black h-full">
+                      <td class=""></td>
+                      <td class=""></td>
+                      <td class=""></td>
+                      <td class=""></td>
+                      <td class=""></td>
+                      <td class=""></td>
+                    </tr> -->
+                    <tfoot class="divide-y divide-black">
+                      <!-- SUMMARY -->
+                      <tr class="">
+                        <td colspan="2" rowspan="4" class="px-2 py-1 align-top">
+                          <div>
+                            <div>
+                              <span class="font-bold">จ่านวนเอกสารวางบิล</span> / Number
+                              of invoices : 1
+                            </div>
+                            <div>
+                              <span class="font-bold">หมายเหตุ</span> /Remarks
+                              <div>-</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td colspan="3" class="px-2 py-1 border-r border-black text-right">
+                          <span class="font-bold"
+                            >ราคาสุทธิสินค้าที่เสียภาษี (บาท)
+                          </span>
+                          / Pre VAT Amount:
+                        </td>
+                        <td class="px-2 py-1 text-right">100,000.00</td>
+                      </tr>
+                      <tr class="">
+                        <td colspan="3" class="px-2 py-1 border-r border-black text-right">
+                          <span class="font-bold">ภาษีมูลค่าเพิ่ม (บาท)</span> / VAT
+                        </td>
+                        <td class="px-2 py-1 text-right">7,000.00</td>
+                      </tr>
+                      <tr class="">
+                        <td colspan="3" class="px-2 py-1 border-r border-black text-right">
+                          <span class="font-bold">จํานวนเงินรวมทั้งสิ้น (บาท)</span> /
+                          Grand Total
+                        </td>
+                        <td class="px-2 py-1 text-right">107,000.00</td>
+                      </tr>
+                      <tr class="bg-gray-300 print:bg-gray-300">
+                        <td colspan="5" class="px-2 py-1">
+                          <div class="flex justify-between items-center">
+                            <span class="font-bold">จํานวนเงินรวมทั้งสิ้น</span>
+                            <span>One Hundred Seven Thousand Baht</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </tbody>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>
+              <div class="pt-4 flex gap-10 text-xs">
+                <!-- LEFT -->
+                <div class="flex-1 space-y-2">
+                  <div><span class="font-bold">การชำระเงิน</span>/Payment</div>
+                  <table class="text-left w-full">
+                    <thead>
+                      <th class="w-4/12">ธนาคาร</th>
+                      <th class="w-4/12">ชื่อบัญชี</th>
+                      <th class="w-4/12">เลขที่บัญชี</th>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b border-gray-300">
+                        <td class="py-1">CCPP FREE OTC</td>
+                        <td class="py-1">CCPP FREE OTC</td>
+                        <td class="py-1">-</td>
+                      </tr>
+                      <tr class="border-b border-gray-300">
+                        <td class="py-1">กรุงเทพ</td>
+                        <td class="py-1">นางสาวมานี มีหมอ</td>
+                        <td class="py-1">123-1234-12-1</td>
+                      </tr>
+                      <tr class="border-b border-gray-300">
+                        <td class="py-1">ไทยพาณิช</td>
+                        <td class="py-1">bastestbank</td>
+                        <td class="py-1">516519549</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- RIGHT -->
+                <div class="flex-1 flex space-x-6">
+                  <div class="flex-1 flex flex-col space-y-2">
+                    <div><span class="font-bold">อนุมัติโดย</span> / Approved by</div>
+                    <div class="h-16"></div>
+                    <div class="border-b border-black border-dotted"></div>
+                    <div class="border-b border-black border-dotted">
+                      วันที่ / Date
+                    </div>
+                  </div>
+                  <div class="flex-1 flex flex-col space-y-2">
+                    <div><span class="font-bold">ผู้รับวางบิล</span> / Recipient</div>
+                    <div class="h-16"></div>
+                    <div class="border-b border-black border-dotted"></div>
+                    <div class="border-b border-black border-dotted">
+                      วันที่ / Date
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+      <!-- <div class="flex flex-col h-full space-y-4">
+        
+        
+        
+        
+        
+      </div> -->
+    </page>
+  </body>
 </html>
